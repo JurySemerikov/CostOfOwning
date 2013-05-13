@@ -10,10 +10,10 @@ $user = auth();
 
 switch($user['access']) {
   case 2:
-      header('Location: /list');
+      header('Location: /list.php');
       break;
   case 1:
-      header('Location: /cost');
+      header('Location: /owner.php');
       break;
   case 0:
       header('Location: /admin.php');

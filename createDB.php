@@ -12,6 +12,7 @@ require 'include/users.php';
 createDatabase();
 createTableAccess();
 createTableUsers();
+createTableNode();
 echo 'All Right!';
 
 function createDatabase() {
@@ -51,6 +52,18 @@ function createTableUsers() {
   );", true);
   
   createUser(0, 'admin', $SQL_CONFIG[adminpass], 'Администратор');
+}
+
+function createTableNode() {
+    global $SQL_TABLES, $SQL_CONFIG;
+
+  sqlQuery("DROP TABLE IF EXISTS $SQL_TABLES[node];", true);
+
+  sqlQuery("CREATE TABLE $SQL_TABLES[node] (
+  id int NOT NULL PRIMARY KEY auto_increment,
+  user_id int NOT NULL REFERENCES $SQL_TABLES[users](id),
+  text varchar(512) NOT NULL
+  );", true);
 }
 
 

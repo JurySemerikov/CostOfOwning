@@ -3,12 +3,13 @@
 $SQL_CONFIG = array (
     'hostname' => 'localhost',
     'username' => 'root',
-    'password' => '********',
+    'password' => 'gah5Ooqu',
     'database' => 'cost_of_motor',
-    'adminpass'=> '******');
+    'adminpass'=> '600895');
 $SQL_TABLES = array (
     'users' => 'Users',
-    'access'=> 'Access');
+    'access'=> 'Access',
+    'node'  => 'Node');
 
 // $SQL_DBH = null;
 

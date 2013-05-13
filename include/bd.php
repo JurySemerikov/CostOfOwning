@@ -3,9 +3,9 @@
 $SQL_CONFIG = array (
     'hostname' => 'localhost',
     'username' => 'root',
-    'password' => 'gah5Ooqu',
+    'password' => '********',
     'database' => 'cost_of_motor',
-    'adminpass'=> '600895');
+    'adminpass'=> '******');
 $SQL_TABLES = array (
     'users' => 'Users',
     'access'=> 'Access');

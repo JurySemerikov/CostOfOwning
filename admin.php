@@ -17,7 +17,7 @@ if(isset($_POST['id']) && isset($_POST['login']) && isset($_POST['pass']) && iss
     $login = trim($_POST['login']);
     $pass = $_POST['pass'];
     
-    if($id > 1)
+    if($id > 0)
       if(empty($login))
 	removeUser($id);
       else
@@ -57,7 +57,7 @@ while($row = $res->fetch(PDO::FETCH_ASSOC)) {
     echo "</form>\n";
 }
 ?>
-<form method='POST'><input type='hidden' name='id' value='1'>
+<form method='POST'><input type='hidden' name='id' value='0'>
 <tr><td><input type='text' name='login' placeholder='Login'></td><td><input type='text' name='pass' placeholder='Password'></td><td><select name='access'><option value='0'>Администратор</option><option selected value='1'>Владелец</option><option value='2'>Пользователь</option></select></td><td><input type='submit' value='Добавить'></td></tr>
 </table>
 </body>

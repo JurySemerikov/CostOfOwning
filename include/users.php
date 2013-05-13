@@ -23,8 +23,13 @@ function createUser($access, $login, $password, $name = null) {
   sqlInsert($SQL_TABLES['users'], $array);
 }
 
-function editUser() {
-  
+function editUser($id, $login, $pass, $access) {
+  global $SQL_TABLES, $SQL_DBH;
+  $login = $SQL_DBH->quote($login);
+  $pass = $SQL_DBH->quote($pass);
+  $id     = "'" . (1*$id    ) . "'"; 
+  $access = "'" . (1*$access) . "'";
+  sqlQuery("UPDATE $SQL_TABLES[users] SET login=$login, password=$pass, access=$access WHERE id=$id", true);
 }
 
 function removeUser($id) {
